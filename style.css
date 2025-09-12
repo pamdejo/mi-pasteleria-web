@@ -1,0 +1,129 @@
+:root {
+  --ff-head: "Pacifico", cursive;   /* títulos */
+  --ff-body: "Lato", sans-serif;    /* texto general */
+}
+
+
+
+body {
+  font-family: var(--ff-body);
+}
+
+h1, h2, h3, .title {
+  font-family: var(--ff-head);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+
+  h3 {
+    color: rgb(255, 255, 255); /* Color de la letra */
+    -webkit-text-stroke: 0.2px rgb(167, 142, 142); /* 👈 grosor y color del zborde */
+    text-shadow: 2px 2px 5px rgb(88, 46, 46); /* 👈 sombra que lo hace más legible */
+    }
+  
+  h1 {
+    color: rgb(255, 255, 255); /* Color de la letra */
+    -webkit-text-stroke: 0.3px rgb(167, 142, 142); /* 👈 grosor y color del borde */
+    text-shadow: 2px 2px 5px rgb(77, 28, 28); /* 👈 sombra que lo hace más legible */
+    }
+  p{color: rgb(255, 255, 255); /* Color de la letra */
+    -webkit-text-stroke: 0.2px rgb(104, 84, 84); /* 👈 grosor y color del borde */
+    text-shadow: 2px 2px 5px rgb(92, 33, 33); /* 👈 sombra que lo hace más legible */
+  }
+     
+    
+
+
+  background-image:url(img/ChatGPT\ Image\ 12\ sept\ 2025\,\ 09_38_27\ a.m..png) ; /* la imagen cubre toda la pantalla */
+  background-position: center;   /* centrada */
+  background-attachment: fixed;  /* efecto parallax */
+  font-family: Arial, sans-serif;
+}
+
+/* capa oscura encima (opcional) */
+.overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+.presentacion {
+  background: rgba(48, 24, 24, 0.5); /* negro translúcido */
+  width: 100%; /* ocupa todo el ancho */
+  padding: 20px;
+  display: inline-block; /* el recuadro se ajusta al tamaño del texto */
+  text-align: center;
+   margin-bottom: 20px; /* espacio debajo del título */
+   margin-top: -10px;
+}
+
+.presentacion h1{
+  margin-bottom: 12px; /* espacio debajo del título */
+}
+.presentacion p {
+  color: #fff; /* texto en blanco para buen contraste */
+  margin: 0;
+}
+
+/**/
+
+header {
+  background-color: #6b4444;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+   h2{
+    color: rgb(228, 220, 201); /* Color de la letra */
+    -webkit-text-stroke: 0.06px rgb(133, 67, 93); /* 👈 grosor y color del borde */
+    margin-right: 20px;
+      text-shadow: 2px 2px 5px rgb(77, 28, 28); /* 👈 sombra que lo hace más legible */
+
+  }
+
+
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+}
+
+header img {
+  width: 130px;
+  margin-right: 10px;
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #fd99c8;
+
+    
+text-shadow: 2px 2px 5px rgb(77, 28, 28); /* 👈 sombra que lo hace más legible */
+  margin-right: 20px;
+  font-weight: bold;
+}
+
+.user-options {
+  font-size: 14px;
+  color: #e698bc;
+  text-shadow: 2px 2px 5px rgb(77, 28, 28); /* 👈 sombra que lo hace más legible */
+}
+
+a {
+  color: #fd99c8;       /* color del texto, cámbialo al que quieras */
+  text-decoration: none; /* quita el subrayado */
+}
+
+a:hover {
+  color: #5a190d;       /* color al pasar el mouse (hover) */
+  text-decoration: underline; /* opcional: subrayar solo en hover */
+}
