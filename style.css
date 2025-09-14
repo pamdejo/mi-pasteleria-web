@@ -44,24 +44,15 @@ body {
 }
 
 /* capa oscura encima (opcional) */
-.overlay {
-  background-color: rgba(0, 0, 0, 0.4);
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  text-align: center;
-}
+
 .presentacion {
-  background: rgba(48, 24, 24, 0.5); /* negro translúcido */
+  background: rgba(59, 30, 30, 0.5); /* negro translúcido */
   width: 100%; /* ocupa todo el ancho */
   padding: 20px;
   display: inline-block; /* el recuadro se ajusta al tamaño del texto */
   text-align: center;
    margin-bottom: 20px; /* espacio debajo del título */
-   margin-top: -10px;
+   margin-top: 5px;
 }
 
 .presentacion h1{
@@ -126,4 +117,39 @@ a {
 a:hover {
   color: #5a190d;       /* color al pasar el mouse (hover) */
   text-decoration: underline; /* opcional: subrayar solo en hover */
+}
+
+.context img{
+  width: 300px;      /* Ajusta el ancho (puedes probar con 200px, 400px, etc.) */
+  height: auto;      /* Mantiene la proporción */
+  display: block;    
+  margin-left: 120px; /* Centrar la imagen */
+  position: relative;
+  top: 80%;    /* Mueve hacia abajo */
+  border-radius: 10px; /* esquinas redondeadas si quieres */
+  box-shadow: 0 4px 8px rgb(88, 19, 42); /* sombra */
+   
+ 
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+/* */
+
+.text-box {
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin-left: 600px;   /* desplaza a la derecha */
+  margin-top: -210px;    /* 👈 valor negativo la sube */
 }
