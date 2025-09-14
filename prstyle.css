@@ -20,13 +20,13 @@ body {
     color: rgb(255, 255, 255); 
     -webkit-text-stroke: 0.2px rgb(167, 142, 142); 
     text-shadow: 2px 2px 5px rgb(88, 46, 46); 
-    }
+  }
   
   h1 {
     color: rgb(255, 255, 255); 
     -webkit-text-stroke: 0.3px rgb(167, 142, 142); 
     text-shadow: 2px 2px 5px rgb(77, 28, 28); 
-    }
+  }
   p{
     color: rgb(255, 255, 255); 
     -webkit-text-stroke: 0.2px rgb(104, 84, 84); 
@@ -83,11 +83,36 @@ body {
   box-shadow: 0 4px 8px rgb(88, 19, 42);
 }
 
-.info-producto p {
-  margin: 5px 0;
+.info-producto .nombre {
+  font-size: 16px;
   font-weight: bold;
   color: #fff;
-  text-shadow: 1px 1px 3px rgb(77, 28, 28);
+  text-shadow: 2px 2px 5px rgb(77, 28, 28);
+  margin-bottom: 5px;
+}
+
+.info-producto .precio {
+  font-size: 20px;
+  font-weight: bold;
+  color: #3dc000; 
+  text-shadow: 2px 2px 5px rgb(61, 16, 26);
+  margin-bottom: 5px;
+}
+
+.info-producto .categoria {
+  font-size: 18px;
+  font-style: bold;
+  color: #cc9c00;
+  text-shadow: 1px 1px 3px rgb(61, 16, 26);
+  margin-bottom: 6px;
+}
+
+.info-producto .descripcion {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgb(61, 16, 26);
+  line-height: 1.4;
 }
 
 header {
