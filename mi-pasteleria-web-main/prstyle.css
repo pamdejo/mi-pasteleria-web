@@ -201,3 +201,19 @@ h2{
     margin-right: 20px;
     text-shadow: 2px 2px 5px rgb(77, 28, 28); 
   }
+
+.add-to-cart {
+  background-color: #3f2228; /* color de fondo */
+  color: white;              /* color del texto */
+  border: none;              /* quita el borde */
+  border-radius: 5px;        /* bordes redondeados */
+  padding: 10px 15px;        /* tamaño del botón */
+  cursor: pointer;           /* cambia el cursor al pasar por encima */
+  font-weight: bold;         /* texto en negrita */
+  transition: background-color 0.3s; /* efecto al pasar el mouse */
+}
+
+/* Efecto hover al pasar el mouse */
+.add-to-cart:hover {
+  background-color: #ff4a3a; /* cambia color al pasar el mouse */
+}

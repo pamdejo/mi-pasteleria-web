@@ -1,4 +1,4 @@
- :root {
+:root {
   --ff-head: "Pacifico", cursive;   /* títulos */
   --ff-body: "Lato", sans-serif;    /* texto general */
 }
@@ -44,74 +44,17 @@ body {
 }
 
 /* capa oscura encima (opcional) */
-.overlay {
-  background-color: rgba(0, 0, 0, 0.4);
-  padding-bottom: 65px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
+
+.presentacion {
+  background: rgba(59, 30, 30, 0.5); /* negro translúcido */
+  width: 100%; /* ocupa todo el ancho */
+  padding: 20px;
+  display: inline-block; /* el recuadro se ajusta al tamaño del texto */
   text-align: center;
+   margin-bottom: 20px; /* espacio debajo del título */
+   margin-top: 5px;
 }
 
-
-.recuadro {
-    position:static;
-    background: rgba(48, 24, 24, 0.5);
-    padding: 10px;
-    border-radius: 10px;
-    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
-    width: 200mm;
-    height: 80%;
-    max-width: 500px;
-    text-align:center;
-    text-anchor:middle;
-    box-sizing: border-box;
-    margin-top: 20mm;
-
-.form-inis {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-top: 15px;
-}
-
-.form-inis label {
-  text-align: left;
-  font-size: 14px;
-  color: #ffdede;
-  text-shadow: 1px 1px 3px rgb(77, 28, 28);
-}
-
-.form-inis input {
-  padding: 8px;
-  border: none;
-  border-radius: 6px;
-  outline: none;
-  background: rgba(255, 255, 255, 0.85);
-  font-size: 14px;
-}
-
-.form-inis button {
-  margin-top: 10px;
-  padding: 10px;
-  border: none;
-  border-radius: 8px;
-  background: #a34d4d;
-  color: #fff;
-  font-weight: bold;
-  cursor: pointer;
-  text-shadow: 1px 1px 3px rgb(46, 17, 17);
-  transition: background 0.3s ease;
-}
-
-.form-inis button:hover {
-  background: #5a190d;
-}
-
-
-}
 .presentacion h1{
   margin-bottom: 12px; /* espacio debajo del título */
 }
@@ -176,4 +119,27 @@ a:hover {
   text-decoration: underline; /* opcional: subrayar solo en hover */
 }
 
+.context img{
+  width: 300px;      /* Ajusta el ancho (puedes probar con 200px, 400px, etc.) */
+  height: auto;      /* Mantiene la proporción */
+  display: block;    
+  margin-left: 120px; /* Centrar la imagen */
+  position: relative;
+  top: 80%;    /* Mueve hacia abajo */
+  border-radius: 10px; /* esquinas redondeadas si quieres */
+  box-shadow: 0 4px 8px rgb(88, 19, 42); /* sombra */
+   
+ 
+}
 
+.overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+/* */

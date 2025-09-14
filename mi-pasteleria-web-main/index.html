@@ -25,7 +25,7 @@
       |
       <a href="registro.html"> Registrarse </a> 
       |
-      <a href="carrito.html"> Carro (0)</a>
+      <a href="carrito.html"> Carro (<span id="cart-count">0</span>)</a>
     </div>
   </header>
     <div class="overlay">
@@ -47,6 +47,14 @@
   torta más grande del mundo, la pastelería busca renovar su sistema de ventas online para ofrecer
   una experiencia de compra moderna y accesible para sus clientes.</p>
   </div>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const cartCount = document.getElementById("cart-count");
+  const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  cartCount.innerText = carrito.length;
+  });
+</script>
   
   
 </body>
