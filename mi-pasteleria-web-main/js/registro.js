@@ -11,30 +11,30 @@ document.addEventListener("DOMContentLoaded", () => {
     const confirmar = document.getElementById("confirmar").value;
     const codigoDescuento = document.getElementById("descuento").value.trim();
 
-    // Validar contraseñas
+    
     if (password !== confirmar) {
       alert("Las contraseñas no coinciden.");
       return;
     }
 
-    // Recuperar usuarios existentes
+    
     let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-    // Verificar si el email ya está registrado
+    
     if (usuarios.some(u => u.correo === correo)) {
       alert("Este correo ya está registrado.");
       return;
     }
 
-    // Determinar descuento
+    
     let descuento = 0;
     if (edad >= 50) {
-      descuento = 50; // 50% para mayores de 50 años
+      descuento = 50; 
     } else if (codigoDescuento.toUpperCase() === "FELICES50") {
-      descuento = 10; // 10% si ingresan el código
+      descuento = 10; 
     }
 
-    // Crear usuario
+    
     const usuario = {
       nombre,
       edad,
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
     alert(`Registro exitoso! Tu descuento es del ${descuento}%`);
     form.reset();
 
-    // Redirigir a la página principal
+    
     window.location.href = "index.html";
   });
 });

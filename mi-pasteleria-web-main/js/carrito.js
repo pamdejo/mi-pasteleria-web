@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const totalElem = document.getElementById("total");
   const vaciarBtn = document.getElementById("vaciar");
 
-  // Recuperar carrito y usuario actual
+  
   let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
   let usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"));
   let descuento = usuarioActual ? usuarioActual.descuento : 0; // <-- aquí está el descuento
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     lista.innerHTML = "";
     let total = 0;
 
-    // Agrupar productos por nombre e imagen
+   
     let agrupado = {};
     carrito.forEach(prod => {
       const key = prod.nombre + "|" + prod.imagen;
@@ -37,13 +37,13 @@ document.addEventListener("DOMContentLoaded", () => {
       total += prod.precio * prod.cantidad;
     });
 
-    // Aplicar descuento
+    
     let totalConDescuento = total * (1 - descuento / 100);
 
     totalElem.innerText = `Total: $${totalConDescuento.toLocaleString("es-CL")}` +
                           (descuento > 0 ? ` (Descuento aplicado: ${descuento}%)` : "");
 
-    // Botones eliminar
+   
     document.querySelectorAll(".eliminar").forEach((btn, i) => {
       btn.addEventListener("click", () => {
         const prodEliminar = Object.values(agrupado)[i];
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    // Actualizar contador en el header
+   
     document.getElementById("cart-count").innerText = carrito.length;
   }
 

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto</title>
+  <link rel="stylesheet" href="contacto.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+    <div class="logo">
+      <img src="img/logo2.png" alt="Logo">
+      <h2>Pastelería Mil Sabores</h2>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="productos.html">Productos</a>
+      <a href="blog.html">Blog</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <div class="user-options">
+      <a href="iniciosesi.html"> iniciar sesión  </a>
+      |
+      <a href="registro.html"> Registrarse </a> 
+      |
+      <a href="carrito.html"> Carro (<span id="cart-count">0</span>)</a>
+    </div>
+  </header>
+ 
+  
+
+
+  
+  <main>
+    <div class="contact-box">
+      <h2>Contacto</h2>
+      <form id="contactForm">
+        <label for="nombre">Nombre Completo</label>
+        <input type="text" id="nombre" name="nombre" maxlength="100" required>
+        <span class="error" id="nombreError"></span>
+
+
+        <label for="correo">Correo</label>
+        <input type="email" id="correo" name="correo" maxlength="100" required>
+        <span class="error" id="correoError"></span>
+
+
+        <label for="comentario">Comentario (máx 500*)</label>
+        <textarea id="comentario" name="comentario" maxlength="500" required></textarea>
+        <span class="error" id="comentarioError"></span>
+
+
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </main>
+
+
+
+  <script src="js/contacto.js"></script>
+</body>
+</html>

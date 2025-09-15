@@ -1,6 +1,6 @@
 :root {
-  --ff-head: "Pacifico", cursive;   /* títulos */
-  --ff-body: "Lato", sans-serif;    /* texto general */
+  --ff-head: "Pacifico", cursive;   
+  --ff-body: "Lato", sans-serif;    
 }
 
 
@@ -19,47 +19,49 @@ body {
   height: 100vh;
 
   h3 {
-    color: rgb(255, 255, 255); /* Color de la letra */
-    -webkit-text-stroke: 0.2px rgb(167, 142, 142); /* 👈 grosor y color del zborde */
-    text-shadow: 2px 2px 5px rgb(88, 46, 46); /* 👈 sombra que lo hace más legible */
+    color: rgb(255, 255, 255); 
+    -webkit-text-stroke: 0.2px rgb(167, 142, 142); 
+    text-shadow: 2px 2px 5px rgb(88, 46, 46); 
     }
   
   h1 {
-    color: rgb(255, 255, 255); /* Color de la letra */
-    -webkit-text-stroke: 0.3px rgb(167, 142, 142); /* 👈 grosor y color del borde */
-    text-shadow: 2px 2px 5px rgb(77, 28, 28); /* 👈 sombra que lo hace más legible */
+    color: rgb(255, 255, 255); 
+    -webkit-text-stroke: 0.3px rgb(167, 142, 142); 
+    text-shadow: 2px 2px 5px rgb(77, 28, 28); 
     }
-  p{color: rgb(255, 255, 255); /* Color de la letra */
-    -webkit-text-stroke: 0.2px rgb(104, 84, 84); /* 👈 grosor y color del borde */
-    text-shadow: 2px 2px 5px rgb(92, 33, 33); /* 👈 sombra que lo hace más legible */
+  p{color: rgb(255, 255, 255); 
+    -webkit-text-stroke: 0.2px rgb(104, 84, 84); 
+    text-shadow: 2px 2px 5px rgb(92, 33, 33); 
+    
   }
      
     
 
 
-  background-image:url(img/ChatGPT\ Image\ 12\ sept\ 2025\,\ 09_38_27\ a.m..png) ; /* la imagen cubre toda la pantalla */
-  background-position: center;   /* centrada */
-  background-attachment: fixed;  /* efecto parallax */
+  background-image:url(img/ChatGPT\ Image\ 12\ sept\ 2025\,\ 09_38_27\ a.m..png) ; 
+  
+  background-position: center;   
+  background-attachment: fixed; 
   font-family: Arial, sans-serif;
 }
 
-/* capa oscura encima (opcional) */
+
 
 .presentacion {
-  background: rgba(59, 30, 30, 0.5); /* negro translúcido */
-  width: 100%; /* ocupa todo el ancho */
+  background: rgba(59, 30, 30, 0.5); 
+  width: 100%; 
   padding: 20px;
-  display: inline-block; /* el recuadro se ajusta al tamaño del texto */
+  display: inline-block; 
   text-align: center;
-   margin-bottom: 20px; /* espacio debajo del título */
+   margin-bottom: 20px; 
    margin-top: 5px;
 }
 
 .presentacion h1{
-  margin-bottom: 12px; /* espacio debajo del título */
+  margin-bottom: 12px; 
 }
 .presentacion p {
-  color: #fff; /* texto en blanco para buen contraste */
+  color: #fff; 
   margin: 0;
 }
 
@@ -72,10 +74,10 @@ header {
   align-items: center;
   padding: 10px 15px;
    h2{
-    color: rgb(228, 220, 201); /* Color de la letra */
-    -webkit-text-stroke: 0.06px rgb(133, 67, 93); /* 👈 grosor y color del borde */
+    color: rgb(228, 220, 201); 
+    -webkit-text-stroke: 0.06px rgb(133, 67, 93); 
     margin-right: 20px;
-      text-shadow: 2px 2px 5px rgb(77, 28, 28); /* 👈 sombra que lo hace más legible */
+      text-shadow: 2px 2px 5px rgb(77, 28, 28); 
 
   }
 
@@ -98,7 +100,7 @@ nav a {
   color: #fd99c8;
 
     
-text-shadow: 2px 2px 5px rgb(77, 28, 28); /* 👈 sombra que lo hace más legible */
+text-shadow: 2px 2px 5px rgb(77, 28, 28); 
   margin-right: 20px;
   font-weight: bold;
 }
@@ -106,28 +108,28 @@ text-shadow: 2px 2px 5px rgb(77, 28, 28); /* 👈 sombra que lo hace más legibl
 .user-options {
   font-size: 14px;
   color: #e698bc;
-  text-shadow: 2px 2px 5px rgb(77, 28, 28); /* 👈 sombra que lo hace más legible */
+  text-shadow: 2px 2px 5px rgb(77, 28, 28); 
 }
 
 a {
-  color: #fd99c8;       /* color del texto, cámbialo al que quieras */
-  text-decoration: none; /* quita el subrayado */
+  color: #fd99c8;       
+  text-decoration: none; 
 }
 
 a:hover {
-  color: #5a190d;       /* color al pasar el mouse (hover) */
-  text-decoration: underline; /* opcional: subrayar solo en hover */
+  color: #5a190d;      
+  text-decoration: underline; 
 }
 
 .context img{
-  width: 300px;      /* Ajusta el ancho (puedes probar con 200px, 400px, etc.) */
-  height: auto;      /* Mantiene la proporción */
+  width: 300px;     
+  height: auto;   
   display: block;    
-  margin-left: 120px; /* Centrar la imagen */
+  margin-left: 120px; 
   position: relative;
-  top: 80%;    /* Mueve hacia abajo */
-  border-radius: 10px; /* esquinas redondeadas si quieres */
-  box-shadow: 0 4px 8px rgb(88, 19, 42); /* sombra */
+  top: 80%;   
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgb(88, 19, 42); 
    
  
 }
@@ -150,6 +152,54 @@ a:hover {
   padding: 20px;
   border-radius: 10px;
   max-width: 600px;
-  margin-left: 600px;   /* desplaza a la derecha */
-  margin-top: -210px;    /* 👈 valor negativo la sube */
+  margin-left: 600px;   
+  margin-top: -210px; 
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+.text-box2 {
+  h2{
+    color: rgb(228, 220, 201); 
+    -webkit-text-stroke: 0.06px rgb(70, 29, 36); 
+    margin-right: 20px;
+      text-shadow: 2px 2px 5px rgb(77, 28, 28);
+
+  }
+  background: rgba(83, 32, 32, 0.5);
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin-left: 50px;   
+  margin-top: 70px;
+}
+
+.imagen2 img {
+  width: 300px;      
+  height: auto;      
+  display: block;    
+  margin-left: 800px; 
+  position: relative;
+  top: -220px;    
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgb(88, 19, 42);
+
+}
+
+.text-box3 {
+  h2{
+    color: rgb(228, 220, 201); 
+    -webkit-text-stroke: 0.06px rgb(70, 29, 36); 
+    margin-right: 20px;
+      text-shadow: 2px 2px 5px rgb(77, 28, 28);
+  }
+  background: rgba(83, 32, 32, 0.5);
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin-left: 50px;   
+  margin-top: -270px;    }

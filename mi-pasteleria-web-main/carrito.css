@@ -1,6 +1,6 @@
 :root {
-  --ff-head: "Pacifico", cursive;   /* títulos */
-  --ff-body: "Lato", sans-serif;    /* texto general */
+  --ff-head: "Pacifico", cursive;  
+  --ff-body: "Lato", sans-serif;    
 }
 
 
@@ -19,51 +19,51 @@ body {
   height: 100vh;
 
   h3 {
-    color: rgb(255, 255, 255); /* Color de la letra */
-    -webkit-text-stroke: 0.2px rgb(167, 142, 142); /* 👈 grosor y color del zborde */
-    text-shadow: 2px 2px 5px rgb(88, 46, 46); /* 👈 sombra que lo hace más legible */
+    color: rgb(255, 255, 255); 
+    -webkit-text-stroke: 0.2px rgb(167, 142, 142); 
+    text-shadow: 2px 2px 5px rgb(88, 46, 46); 
     }
   
   h1 {
-    color: rgb(255, 255, 255); /* Color de la letra */
-    -webkit-text-stroke: 0.3px rgb(167, 142, 142); /* 👈 grosor y color del borde */
-    text-shadow: 2px 2px 5px rgb(77, 28, 28); /* 👈 sombra que lo hace más legible */
+    color: rgb(255, 255, 255);
+    -webkit-text-stroke: 0.3px rgb(167, 142, 142); 
+    text-shadow: 2px 2px 5px rgb(77, 28, 28); 
     }
-  p{color: rgb(255, 255, 255); /* Color de la letra */
-    -webkit-text-stroke: 0.2px rgb(104, 84, 84); /* 👈 grosor y color del borde */
-    text-shadow: 2px 2px 5px rgb(92, 33, 33); /* 👈 sombra que lo hace más legible */
+  p{color: rgb(255, 255, 255); 
+    -webkit-text-stroke: 0.2px rgb(104, 84, 84); 
+    text-shadow: 2px 2px 5px rgb(92, 33, 33); 
   }
      
     
 
 
-  background-image:url(img/ChatGPT\ Image\ 12\ sept\ 2025\,\ 09_38_27\ a.m..png) ; /* la imagen cubre toda la pantalla */
-  background-position: center;   /* centrada */
-  background-attachment: fixed;  /* efecto parallax */
+  background-image:url(img/ChatGPT\ Image\ 12\ sept\ 2025\,\ 09_38_27\ a.m..png) ; 
+  background-position: center;   
+  background-attachment: fixed;  
   font-family: Arial, sans-serif;
 }
 
-/* capa oscura encima (opcional) */
+
 
 .presentacion {
-  background: rgba(59, 30, 30, 0.5); /* negro translúcido */
-  width: 100%; /* ocupa todo el ancho */
+  background: rgba(59, 30, 30, 0.5); 
+  width: 100%; 
   padding: 20px;
-  display: inline-block; /* el recuadro se ajusta al tamaño del texto */
+  display: inline-block; 
   text-align: center;
-   margin-bottom: 20px; /* espacio debajo del título */
+   margin-bottom: 20px; 
    margin-top: 5px;
 }
 
 .presentacion h1{
-  margin-bottom: 12px; /* espacio debajo del título */
+  margin-bottom: 12px;
 }
 .presentacion p {
-  color: #fff; /* texto en blanco para buen contraste */
+  color: #fff; 
   margin: 0;
 }
 
-/**/
+
 
 header {
   background-color: #6b4444;
@@ -72,10 +72,10 @@ header {
   align-items: center;
   padding: 10px 15px;
    h2{
-    color: rgb(228, 220, 201); /* Color de la letra */
-    -webkit-text-stroke: 0.06px rgb(133, 67, 93); /* 👈 grosor y color del borde */
+    color: rgb(228, 220, 201);
+    -webkit-text-stroke: 0.06px rgb(133, 67, 93); 
     margin-right: 20px;
-      text-shadow: 2px 2px 5px rgb(77, 28, 28); /* 👈 sombra que lo hace más legible */
+      text-shadow: 2px 2px 5px rgb(77, 28, 28); 
 
   }
 
@@ -98,7 +98,7 @@ nav a {
   color: #fd99c8;
 
     
-text-shadow: 2px 2px 5px rgb(77, 28, 28); /* 👈 sombra que lo hace más legible */
+text-shadow: 2px 2px 5px rgb(77, 28, 28); 
   margin-right: 20px;
   font-weight: bold;
 }
@@ -106,28 +106,28 @@ text-shadow: 2px 2px 5px rgb(77, 28, 28); /* 👈 sombra que lo hace más legibl
 .user-options {
   font-size: 14px;
   color: #e698bc;
-  text-shadow: 2px 2px 5px rgb(77, 28, 28); /* 👈 sombra que lo hace más legible */
+  text-shadow: 2px 2px 5px rgb(77, 28, 28);
 }
 
 a {
-  color: #fd99c8;       /* color del texto, cámbialo al que quieras */
-  text-decoration: none; /* quita el subrayado */
+  color: #fd99c8;       
+  text-decoration: none;
 }
 
 a:hover {
-  color: #5a190d;       /* color al pasar el mouse (hover) */
-  text-decoration: underline; /* opcional: subrayar solo en hover */
+  color: #5a190d;       
+  text-decoration: underline; 
 }
 
 .context img{
-  width: 300px;      /* Ajusta el ancho (puedes probar con 200px, 400px, etc.) */
-  height: auto;      /* Mantiene la proporción */
+  width: 300px;      
+  height: auto;     
   display: block;    
-  margin-left: 120px; /* Centrar la imagen */
+  margin-left: 120px; 
   position: relative;
-  top: 80%;    /* Mueve hacia abajo */
-  border-radius: 10px; /* esquinas redondeadas si quieres */
-  box-shadow: 0 4px 8px rgb(88, 19, 42); /* sombra */
+  top: 80%;    
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgb(88, 19, 42); 
    
  
 }
@@ -148,7 +148,7 @@ a:hover {
     background: rgba(48, 24, 24, 0.5);
     padding: 10px;
     border-radius: 10px;
-    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+    
     width: 200mm;
     max-width: 500px;
     text-align:center;
@@ -156,50 +156,50 @@ a:hover {
     box-sizing: border-box;
     margin-top: 20mm;
     height: auto; 
-    overflow: visible; /* permite que crezca con los items */
-    max-height: 90vh; /* máximo 80% de la altura de la ventana */
-    overflow-y: auto; /* scroll vertical si hay exceso de contenido */
+    overflow: visible; 
+    max-height: 90vh; 
+    overflow-y: auto; 
     
 }
 
 #vaciar {
-    background-color: #381621; /* Color de fondo */
-    color: white;             /* Color del texto */
-    border: none;             /* Quita el borde predeterminado */
-    padding: 10px 20px;       /* Tamaño del botón */
-    border-radius: 8px;       /* Bordes redondeados */
-    font-size: 16px;          /* Tamaño de letra */
-    cursor: pointer;          /* Cambia el cursor al pasar por encima */
-    transition: 0.3s;         /* Para animaciones suaves */
+    background-color: #381621; 
+    color: white;             
+    border: none;             
+    padding: 10px 20px;      
+    border-radius: 8px;       
+    font-size: 16px;          
+    cursor: pointer;          
+    transition: 0.3s;         
 }
 
-/* Efecto al pasar el mouse */
+
 #vaciar:hover {
-    background-color: #ac254d; /* Color cuando se hace hover */
-    transform: scale(1.05);    /* Pequeño efecto de zoom */
+    background-color: #ac254d; 
+    transform: scale(1.05);    
 }
 
 .eliminar {
-    background-color: #e67a91; /* rojo de fondo */
-    color: white;              /* texto blanco */
-    border: none;              /* sin borde */
-    padding: 5px 10px;         /* tamaño del botón */
-    border-radius: 5px;        /* bordes redondeados */
-    cursor: pointer;           /* cursor mano */
-    transition: 0.3s;          /* animación suave */
+    background-color: #e67a91; 
+    color: white;             
+    border: none;             
+    padding: 5px 10px;         
+    border-radius: 5px;       
+    cursor: pointer;         
+    transition: 0.3s;         
 }
 
-/* Hover efecto */
+
 .eliminar:hover {
-    background-color: #ca2565; /* rojo más intenso al pasar mouse */
-    transform: scale(1.05);    /* pequeño efecto de zoom */
+    background-color: #ca2565; 
+    transform: scale(1.05);   
 }
 
 .img-carrito {
-    width: 80px;       /* ancho */
-    height: auto;      /* mantener proporción */
-    border-radius: 5px; /* opcional, bordes redondeados */
-    margin-right: 10px; /* separación del texto */
+    width: 80px;       
+    height: auto;      
+    border-radius: 5px;
+    margin-right: 10px; 
     vertical-align: middle;
 }
 
@@ -207,4 +207,3 @@ a:hover {
 
 
 
-/* */
