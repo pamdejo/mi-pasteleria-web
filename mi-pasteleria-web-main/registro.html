@@ -8,6 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Pacifico&display=swap" rel="stylesheet">
 
 </head>
+
+<script src="js/registro.js"></script>
 <body>
 <header>
     <div class="logo">
@@ -18,7 +20,7 @@
       <a href="index.html">Home</a>
       <a href="productos.html">Productos</a>
       <a href="#">Nosotros</a>
-      <a href="#">Blog</a>
+      <a href="blog.html">Blog</a>
       <a href="#">Contacto</a>
     </nav>
     <div class="user-options">
@@ -34,27 +36,27 @@
     <p>Crea tu cuenta para continuar</p>
   </div>
 
-  <form class="form-registro">
+  <form class="form-registro" autocomplete="off">
     <label for="nombre">Nombre completo</label>
-    <input type="text" id="nombre" name="nombre" required>
+    <input type="text" id="nombre" name="nombre" autocomplete="off" required>
 
     <label for="edad">Edad</label>
-    <input type="number" id="edad" name="edad" min="1" max="120" required>
+    <input type="number" id="edad" name="edad" autocomplete="off" min="1" max="120" required>
 
     <label for="correo">Correo electrónico</label>
-    <input type="email" id="correo" name="correo" required>
+    <input type="email" id="correo" name="correo" autocomplete="off" required>
 
-    <label for="password">Contraseña</label>
-    <input type="password" id="password" name="password" required>
+   <label for="password">Contraseña</label>
+    <input type="password" id="password" name="password" autocomplete="new-password" required>
 
     <label for="confirmar">Confirmar contraseña</label>
-    <input type="password" id="confirmar" name="confirmar" required>
+    <input type="password" id="confirmar" name="confirmar" autocomplete="new-password" required>
 
     <label for="descuento">Código de descuento</label>
-    <input type="text" id="descuento" name="descuento" placeholder="(opcional)">
+    <input type="text" id="descuento" name="descuento" autocomplete="off" placeholder="(opcional)">
 
     <button type="submit">Registrarse</button>
-  </form>
+</form>
 </div>
 
 

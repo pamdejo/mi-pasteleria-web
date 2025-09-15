@@ -14,10 +14,10 @@
       <h2>Pastelería Mil Sabores</h2>
     </div>
     <nav>
-      <a href="#">Home</a>
+      <a href="index.html">Home</a>
       <a href="productos.html">Productos</a>
       <a href="#">Nosotros</a>
-      <a href="#">Blog</a>
+      <a href="blog.html">Blog</a>
       <a href="#">Contacto</a>
     </nav>
     <div class="user-options">
@@ -28,15 +28,25 @@
       <a href="carrito.html"> Carro (<span id="cart-count">0</span>)</a>
     </div>
   </header>
+  <div class="overlay">
+  <div class="recuadro">
   
-
   <main>
     <div id="carrito-lista"></div>
     <h3 id="total">Total: $0</h3>
     <button id="vaciar">Vaciar Carrito</button>
   </main>
+</div>
 
-  <!-- El script debe ir aquí -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const cartCount = document.getElementById("cart-count");
+  const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  cartCount.innerText = carrito.length;
+  });
+</script>
+
+
   <script src="js/carrito.js"></script>
 </body>
 </html>

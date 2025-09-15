@@ -1,48 +1,37 @@
 document.addEventListener("DOMContentLoaded", () => {
   const filtro = document.getElementById("filtroCategoria");
   const productos = document.querySelectorAll(".producto");
+  const cartCount = document.getElementById("cart-count");
 
+  // Recuperar carrito existente
+  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  cartCount.innerText = carrito.length;
+
+  // Filtro por categoría
   filtro.addEventListener("change", () => {
     const categoria = filtro.value;
-
     productos.forEach(prod => {
       const cat = prod.querySelector(".categoria").innerText;
-
-      if (categoria === "" || cat === categoria) {
-        prod.style.display = "block";  // se muestra
-      } else {
-        prod.style.display = "none";   // se oculta
-      }
+      prod.style.display = categoria === "" || cat === categoria ? "block" : "none";
     });
   });
-});
 
-
-document.addEventListener("DOMContentLoaded", () => {
-  const botones = document.querySelectorAll(".add-to-cart");
-  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-
-  botones.forEach((btn) => {
+  // Agregar productos al carrito
+  productos.forEach((prod) => {
+    const btn = prod.querySelector(".add-to-cart");
     btn.addEventListener("click", () => {
-      const productoElem = btn.closest(".producto");
-      const nombre = productoElem.querySelector(".nombre").innerText;
-      const precioTexto = productoElem.querySelector(".precio").innerText;
+      const nombre = prod.querySelector(".nombre").innerText;
+      const precioTexto = prod.querySelector(".precio").innerText;
+      const precio = Number(precioTexto.replace(/[^\d]/g, "")); // "$45.000" → 45000
+      const imagen = prod.querySelector("img").src;
 
-      // Convertir el precio "$45.000" → 45000
-      const precio = Number(precioTexto.replace(/[^\d]/g, ""));
-
-      const producto = { nombre, precio };
+      const producto = { nombre, precio, imagen };
 
       carrito.push(producto);
       localStorage.setItem("carrito", JSON.stringify(carrito));
 
-      // Actualizar contador en el header
-      document.getElementById("cart-count").innerText = carrito.length;
-
+      cartCount.innerText = carrito.length;
       alert(`${nombre} añadido al carrito.`);
     });
   });
-
-  // Refrescar contador al cargar la página
-  document.getElementById("cart-count").innerText = carrito.length;
 });

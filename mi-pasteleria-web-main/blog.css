@@ -142,69 +142,46 @@ a:hover {
   color: white;
   text-align: center;
 }
-
-.recuadro {
-    position:static;
-    background: rgba(48, 24, 24, 0.5);
-    padding: 10px;
-    border-radius: 10px;
-    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
-    width: 200mm;
-    max-width: 500px;
-    text-align:center;
-    text-anchor:middle;
-    box-sizing: border-box;
-    margin-top: 20mm;
-    height: auto; 
-    overflow: visible; /* permite que crezca con los items */
-    max-height: 90vh; /* máximo 80% de la altura de la ventana */
-    overflow-y: auto; /* scroll vertical si hay exceso de contenido */
-    
-}
-
-#vaciar {
-    background-color: #381621; /* Color de fondo */
-    color: white;             /* Color del texto */
-    border: none;             /* Quita el borde predeterminado */
-    padding: 10px 20px;       /* Tamaño del botón */
-    border-radius: 8px;       /* Bordes redondeados */
-    font-size: 16px;          /* Tamaño de letra */
-    cursor: pointer;          /* Cambia el cursor al pasar por encima */
-    transition: 0.3s;         /* Para animaciones suaves */
-}
-
-/* Efecto al pasar el mouse */
-#vaciar:hover {
-    background-color: #ac254d; /* Color cuando se hace hover */
-    transform: scale(1.05);    /* Pequeño efecto de zoom */
-}
-
-.eliminar {
-    background-color: #e67a91; /* rojo de fondo */
-    color: white;              /* texto blanco */
-    border: none;              /* sin borde */
-    padding: 5px 10px;         /* tamaño del botón */
-    border-radius: 5px;        /* bordes redondeados */
-    cursor: pointer;           /* cursor mano */
-    transition: 0.3s;          /* animación suave */
-}
-
-/* Hover efecto */
-.eliminar:hover {
-    background-color: #ca2565; /* rojo más intenso al pasar mouse */
-    transform: scale(1.05);    /* pequeño efecto de zoom */
-}
-
-.img-carrito {
-    width: 80px;       /* ancho */
-    height: auto;      /* mantener proporción */
-    border-radius: 5px; /* opcional, bordes redondeados */
-    margin-right: 10px; /* separación del texto */
-    vertical-align: middle;
-}
-
-
-
-
-
 /* */
+
+.text-box {
+  background: rgba(83, 32, 32, 0.5);
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin-left: 600px;   /* desplaza a la derecha */
+  margin-top: -210px;    /* 👈 valor negativo la sube */
+}
+
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.post {
+  display: flex;
+  gap: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.post img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.post h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.post p {
+  margin: 5px 0 0;
+  font-size: 0.95rem;
+}
