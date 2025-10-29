@@ -1,85 +1,38 @@
 :root {
-  --ff-head: "Pacifico", cursive;  
-  --ff-body: "Lato", sans-serif;    
+  --ff-head: "Pacifico", cursive;
+  --ff-body: "Lato", sans-serif;
 }
 
-
-
+/* ======= GENERAL ======= */
 body {
   font-family: var(--ff-body);
+  margin: 0;
+  padding: 0;
+  background-image: url("../img/chatgpt_12sept.png");
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  color: white;
 }
 
+/* ======= TÍTULOS ======= */
 h1, h2, h3, .title {
   font-family: var(--ff-head);
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-
-  h3 {
-    color: rgb(255, 255, 255); 
-    -webkit-text-stroke: 0.2px rgb(167, 142, 142); 
-    text-shadow: 2px 2px 5px rgb(88, 46, 46); 
-    }
-  
-  h1 {
-    color: rgb(255, 255, 255);
-    -webkit-text-stroke: 0.3px rgb(167, 142, 142); 
-    text-shadow: 2px 2px 5px rgb(77, 28, 28); 
-    }
-  p{color: rgb(255, 255, 255); 
-    -webkit-text-stroke: 0.2px rgb(104, 84, 84); 
-    text-shadow: 2px 2px 5px rgb(92, 33, 33); 
-  }
-     
-    
-
-
-  background-image:url(img/ChatGPT\ Image\ 12\ sept\ 2025\,\ 09_38_27\ a.m..png) ; 
-  background-position: center;   
-  background-attachment: fixed;  
-  font-family: Arial, sans-serif;
+h1 {
+  color: #fff;
+  -webkit-text-stroke: 0.3px rgb(167, 142, 142);
+  text-shadow: 2px 2px 5px rgb(77, 28, 28);
 }
 
-
-
-.presentacion {
-  background: rgba(59, 30, 30, 0.5); 
-  width: 100%; 
-  padding: 20px;
-  display: inline-block; 
-  text-align: center;
-   margin-bottom: 20px; 
-   margin-top: 5px;
-}
-
-.presentacion h1{
-  margin-bottom: 12px;
-}
-.presentacion p {
-  color: #fff; 
-  margin: 0;
-}
-
-
-
+/* ======= HEADER ======= */
 header {
   background-color: #6b4444;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 15px;
-   h2{
-    color: rgb(228, 220, 201);
-    -webkit-text-stroke: 0.06px rgb(133, 67, 93); 
-    margin-right: 20px;
-      text-shadow: 2px 2px 5px rgb(77, 28, 28); 
-
-  }
-
-
 }
 
 header .logo {
@@ -96,10 +49,7 @@ nav a {
   margin: 0 10px;
   text-decoration: none;
   color: #fd99c8;
-
-    
-text-shadow: 2px 2px 5px rgb(77, 28, 28); 
-  margin-right: 20px;
+  text-shadow: 2px 2px 5px rgb(77, 28, 28);
   font-weight: bold;
 }
 
@@ -110,100 +60,143 @@ text-shadow: 2px 2px 5px rgb(77, 28, 28);
 }
 
 a {
-  color: #fd99c8;       
+  color: #fd99c8;
   text-decoration: none;
 }
 
 a:hover {
-  color: #5a190d;       
-  text-decoration: underline; 
+  color: #5a190d;
+  text-decoration: underline;
 }
 
-.context img{
-  width: 300px;      
-  height: auto;     
-  display: block;    
-  margin-left: 120px; 
-  position: relative;
-  top: 80%;    
-  border-radius: 10px; 
-  box-shadow: 0 4px 8px rgb(88, 19, 42); 
-   
- 
-}
-
+/* ======= CONTENEDOR PRINCIPAL ======= */
 .overlay {
   background-color: rgba(0, 0, 0, 0.4);
-  height: 100vh;
+  min-height: 100vh; /* 🔹 Permite scroll */
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  color: white;
-  text-align: center;
+  align-items: flex-start;
+  padding: 50px 20px;
 }
 
+/* ======= RECUADRO DEL CARRITO ======= */
 .recuadro {
-    position:static;
-    background: rgba(48, 24, 24, 0.5);
-    padding: 10px;
-    border-radius: 10px;
-    
-    width: 200mm;
-    max-width: 500px;
-    text-align:center;
-    text-anchor:middle;
-    box-sizing: border-box;
-    margin-top: 20mm;
-    height: auto; 
-    overflow: visible; 
-    max-height: 90vh; 
-    overflow-y: auto; 
-    
+  background: rgba(48, 24, 24, 0.6);
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  box-sizing: border-box;
+  border: 5px solid #471629;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
 
-#vaciar {
-    background-color: #381621; 
-    color: white;             
-    border: none;             
-    padding: 10px 20px;      
-    border-radius: 8px;       
-    font-size: 16px;          
-    cursor: pointer;          
-    transition: 0.3s;         
+.recuadro h1 {
+  margin-bottom: 20px;
 }
 
-
-#vaciar:hover {
-    background-color: #ac254d; 
-    transform: scale(1.05);    
+/* ======= LISTA DE PRODUCTOS ======= */
+.carrito-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-height: 60vh;
+  overflow-y: auto;
+  padding-right: 10px;
 }
 
-.eliminar {
-    background-color: #e67a91; 
-    color: white;             
-    border: none;             
-    padding: 5px 10px;         
-    border-radius: 5px;       
-    cursor: pointer;         
-    transition: 0.3s;         
+.item-carrito {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(85, 35, 35, 0.6);
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease-in-out;
 }
 
-
-.eliminar:hover {
-    background-color: #ca2565; 
-    transform: scale(1.05);   
+.item-carrito:hover {
+  transform: scale(1.02);
 }
 
 .img-carrito {
-    width: 80px;       
-    height: auto;      
-    border-radius: 5px;
-    margin-right: 10px; 
-    vertical-align: middle;
+  width: 80px;
+  height: auto;
+  border-radius: 5px;
+  margin-right: 10px;
 }
 
+.info-carrito {
+  flex: 1;
+  text-align: left;
+}
 
+.info-carrito p {
+  margin: 2px 0;
+  color: #fff;
+  font-size: 0.95rem;
+  text-shadow: 1px 1px 3px rgb(61, 16, 26);
+}
 
+/* ======= BOTONES ======= */
+#vaciar {
+  background-color: #381621;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: 0.3s;
+}
 
+#vaciar:hover {
+  background-color: #ac254d;
+  transform: scale(1.05);
+}
 
+.eliminar {
+  background-color: #e67a91;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.eliminar:hover {
+  background-color: #ca2565;
+  transform: scale(1.05);
+}
+
+/* ======= TOTAL ======= */
+.total {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffe5e5;
+  text-shadow: 2px 2px 5px rgb(92, 33, 33);
+}
+
+/* ======= RESPONSIVE ======= */
+@media (max-width: 768px) {
+  .recuadro {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .item-carrito {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .img-carrito {
+    margin-bottom: 10px;
+  }
+}

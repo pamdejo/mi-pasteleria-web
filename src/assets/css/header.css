@@ -1,0 +1,57 @@
+/* ==========================
+   HEADER STYLES
+   ========================== */
+
+header {
+  background-color: #6b4444;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+}
+
+header h2 {
+  color: rgb(228, 220, 201);
+  -webkit-text-stroke: 0.06px rgb(133, 67, 93);
+  margin-right: 20px;
+  text-shadow: 2px 2px 5px rgb(77, 28, 28);
+}
+
+/* LOGO */
+header .logo {
+  display: flex;
+  align-items: center;
+}
+
+header img {
+  width: 130px;
+  margin-right: 10px;
+}
+
+/* NAV LINKS */
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #fd99c8;
+  text-shadow: 2px 2px 5px rgb(77, 28, 28);
+  margin-right: 20px;
+  font-weight: bold;
+}
+
+/* USER OPTIONS */
+.user-options {
+  font-size: 14px;
+  color: #e698bc;
+  text-shadow: 2px 2px 5px rgb(77, 28, 28);
+}
+
+/* LINKS DEFAULT + HOVER */
+a {
+  color: #fd99c8;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #5a190d;
+  text-decoration: underline;
+}

@@ -1,242 +1,124 @@
 :root {
   --ff-head: "Pacifico", cursive;
-  --ff-body: "Lato", sans-serif;     
+  --ff-body: "Lato", sans-serif;
 }
 
-
-
+/* --- GENERAL --- */
 body {
   font-family: var(--ff-body);
+  margin: 0;
+  padding: 0;
+  background-image: url("../img/chatgpt_12sept.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
 }
 
-h1, h2, h3, .title {
+/* --- TÍTULOS --- */
+h1, h2, h3 {
   font-family: var(--ff-head);
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-
-  h3 {
-    color: rgb(255, 255, 255); 
-    -webkit-text-stroke: 0.2px rgb(167, 142, 142); 
-    text-shadow: 2px 2px 5px rgb(88, 46, 46); 
-    }
-  
-  h1 {
-    color: rgb(255, 255, 255); 
-    -webkit-text-stroke: 0.3px rgb(167, 142, 142); 
-    text-shadow: 2px 2px 5px rgb(77, 28, 28); 
-    }
-  p{color: rgb(255, 255, 255); 
-    -webkit-text-stroke: 0.2px rgb(104, 84, 84); 
-    text-shadow: 2px 2px 5px rgb(92, 33, 33); 
-  }
-     
-    
-
-
-  background-image:url(img/ChatGPT\ Image\ 12\ sept\ 2025\,\ 09_38_27\ a.m..png) ; 
-  background-position: center;   
-  background-attachment: fixed;  
-  font-family: Arial, sans-serif;
+h1 {
+  color: white;
+  -webkit-text-stroke: 0.3px rgb(167, 142, 142);
+  text-shadow: 2px 2px 5px rgb(77, 28, 28);
 }
 
-
-
-.presentacion {
-  background: rgba(59, 30, 30, 0.5); 
-  width: 100%; 
-  padding: 20px;
-  display: inline-block;
-  text-align: center;
-   margin-bottom: 20px; 
-   margin-top: 5px;
-}
-
-.presentacion h1{
-  margin-bottom: 12px; 
-}
-.presentacion p {
-  color: #fff;
-  margin: 0;
-}
-
-/**/
-
-header {
-  background-color: #6b4444;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 15px;
-   h2{
-    color: rgb(228, 220, 201); 
-    -webkit-text-stroke: 0.06px rgb(133, 67, 93); 
-    margin-right: 20px;
-      text-shadow: 2px 2px 5px rgb(77, 28, 28); 
-
-  }
-
-
-}
-
-header .logo {
-  display: flex;
-  align-items: center;
-}
-
-header img {
-  width: 130px;
-  margin-right: 10px;
-}
-
-nav a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: #fd99c8;
-
-    
-text-shadow: 2px 2px 5px rgb(77, 28, 28); 
-  margin-right: 20px;
-  font-weight: bold;
-}
-
-.user-options {
-  font-size: 14px;
-  color: #e698bc;
-  text-shadow: 2px 2px 5px rgb(77, 28, 28); 
-}
-
-a {
-  color: #fd99c8;       
-  text-decoration: none; 
-}
-
-a:hover {
-  color: #5a190d;       
-  text-decoration: underline;
-}
-
-.context img{
-  width: 300px;      
-  height: auto;      
-  display: block;    
-  margin-left: 120px; 
-  position: relative;
-  top: 80%;   
-  border-radius: 10px; 
-  box-shadow: 0 4px 8px rgb(88, 19, 42);
-    text-shadow: 2px 2px 5px rgb(88, 46, 46); 
- 
-}
-
+/* --- CONTENEDOR PRINCIPAL --- */
 .overlay {
   background-color: rgba(0, 0, 0, 0.4);
-  height: 100vh;
+  min-height: 100vh; /* Permite scroll */
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  color: white;
-  text-align: center;
-}
-/* */
-
-.text-box {
-  background: rgba(83, 32, 32, 0.5);
-  color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 600px;
-  margin-left: 600px;   
-  margin-top: -210px;    
+  align-items: flex-start;
+  padding: 60px 20px;
 }
 
+/* --- CAJA DE CONTACTO --- */
 .contact-box {
-  background-color: #4b1f269a; 
-  padding: 25px;
-  border-radius: 20px;
-  max-width: 500px;
-  margin: 0 auto;
+  background: rgba(59, 30, 30, 0.6);
+  width: 90%;
+  max-width: 600px;
+  border-radius: 10px;
+  padding: 40px;
+  border: 4px solid #5c1c2c;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
   text-align: left;
 }
 
 .contact-box h2 {
-  font-family: 'Pacifico', cursive;
-  font-size: 22px;
-  background-color: #46192000; 
-  padding: 5px 15px;
-  border-radius: 15px;
-  display: inline-block;
-  margin-bottom: 20px;
+  text-align: center;
   color: #ffe5e5;
-  -webkit-text-stroke: 0.2px rgb(68, 35, 35); 
   text-shadow: 2px 2px 5px rgb(92, 33, 33);
-  
-  
+  margin-bottom: 25px;
 }
 
-.contact-box form {
+/* --- FORMULARIO --- */
+form {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 15px;
 }
 
-.contact-box label {
+label {
   font-weight: bold;
-  color: #e7c0c0; 
+  color: #f3d7d7;
 }
 
-.contact-box input,
-.contact-box textarea {
-  border: 2px solid #3f2323; 
-  border-radius: 5px;
-  padding: 8px;
-  outline: none;
-  background-color: #FFF5E1; 
-  font-family: 'Lato', sans-serif;
-  color: #5D4037; 
-}
-
-.contact-box input:focus,
-.contact-box textarea:focus {
-  border-color: #8B4513; 
-}
-
-.contact-box textarea {
-  resize: none;
-  min-height: 100px;
-  color: #5D4037; 
-}
-
-.contact-box button {
-  background-color: #4d0b2a; 
-  color: #FFF5E1; 
+input,
+textarea {
+  width: 100%;
+  border: 2px solid #3f2323;
+  border-radius: 6px;
   padding: 10px;
+  background-color: #fff5e1;
+  color: #5d4037;
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  outline: none;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #a1425a;
+  box-shadow: 0 0 6px rgba(193, 72, 108, 0.6);
+}
+
+textarea {
+  resize: none;
+  min-height: 120px;
+}
+
+/* --- BOTÓN --- */
+button {
+  background-color: #4d0b2a;
+  color: #fff5e1;
   border: none;
   border-radius: 8px;
-  cursor: pointer;
+  padding: 12px;
   font-weight: bold;
-  margin-top: 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.contact-box button:hover {
-  background-color: #c72c60; 
-  color: #FFF5E1;
+button:hover {
+  background-color: #c72c60;
 }
 
-
-.contact-box p,
-.contact-box small {
-  color: #B0BEC5; 
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .contact-box {
+    padding: 25px;
+  }
 }
-
 .error {
-  color: red;
+  color: #ffb3b3;
   font-size: 14px;
   margin-top: -8px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   display: block;
 }

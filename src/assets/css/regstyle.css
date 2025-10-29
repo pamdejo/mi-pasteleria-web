@@ -1,48 +1,39 @@
 :root {
-  --ff-head: "Pacifico", cursive;   
-  --ff-body: "Lato", sans-serif;    
+  --ff-head: "Pacifico", cursive;
+  --ff-body: "Lato", sans-serif;
 }
-
-
 
 body {
   font-family: var(--ff-body);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: Arial, sans-serif;
 }
 
 h1, h2, h3, .title {
   font-family: var(--ff-head);
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-
-  h3 {
-    color: rgb(255, 255, 255); 
-    -webkit-text-stroke: 0.2px rgb(167, 142, 142);
-    text-shadow: 2px 2px 5px rgb(88, 46, 46);
-    }
-  
-  h1 {
-    color: rgb(255, 255, 255);
-    -webkit-text-stroke: 0.3px rgb(167, 142, 142); 
-    text-shadow: 2px 2px 5px rgb(77, 28, 28); 
-    }
-  p{color: rgb(255, 255, 255); 
-    -webkit-text-stroke: 0.2px rgb(104, 84, 84); 
-    text-shadow: 2px 2px 5px rgb(92, 33, 33); 
-  }
-     
-    
-
-
-  background-image:url(img/ChatGPT\ Image\ 12\ sept\ 2025\,\ 09_38_27\ a.m..png) ; 
-  background-position: center;   
-  background-attachment: fixed;  
-  font-family: Arial, sans-serif;
+h1 {
+  color: rgb(255, 255, 255);
+  -webkit-text-stroke: 0.3px rgb(167, 142, 142);
+  text-shadow: 2px 2px 5px rgb(77, 28, 28);
 }
 
+h3 {
+  color: rgb(255, 255, 255);
+  -webkit-text-stroke: 0.2px rgb(167, 142, 142);
+  text-shadow: 2px 2px 5px rgb(88, 46, 46);
+}
+
+p {
+  color: rgb(255, 255, 255);
+  -webkit-text-stroke: 0.2px rgb(104, 84, 84);
+  text-shadow: 2px 2px 5px rgb(92, 33, 33);
+}
 
 .overlay {
   background-color: rgba(0, 0, 0, 0.4);
@@ -53,21 +44,21 @@ body {
   align-items: center;
   color: white;
   text-align: center;
+  min-height: 100vh; /* Ocupa todo el alto de la pantalla */
 }
 
-
 .recuadro {
-    position:static;
-    background: rgba(48, 24, 24, 0.5);
-    padding: 10px;
-    border-radius: 10px;
-    width: 200mm;
-    height: 80%;
-    max-width: 500px;
-    text-align:center;
-    text-anchor:middle;
-    box-sizing: border-box;
-    margin-top: 20mm;
+  position: static;
+  background: rgba(48, 24, 24, 0.5);
+  padding: 10px;
+  border-radius: 10px;
+  width: 200mm;
+  height: 80%;
+  max-width: 500px;
+  text-align: center;
+  box-sizing: border-box;
+  margin-top: 20mm;
+}
 
 .form-registro {
   display: flex;
@@ -109,67 +100,11 @@ body {
   background: #5a190d;
 }
 
+.presentacion h1 {
+  margin-bottom: 12px;
+}
 
-}
-.presentacion h1{
-  margin-bottom: 12px; 
-}
 .presentacion p {
-  color: #fff; 
+  color: #fff;
   margin: 0;
 }
-
-/**/
-
-header {
-  background-color: #6b4444;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 15px;
-   h2{
-    color: rgb(228, 220, 201);
-    -webkit-text-stroke: 0.06px rgb(133, 67, 93); 
-    margin-right: 20px;
-      text-shadow: 2px 2px 5px rgb(77, 28, 28); 
-
-  }
-
-
-}
-
-header .logo {
-  display: flex;
-  align-items: center;
-}
-
-header img {
-  width: 130px;
-  margin-right: 10px;
-}
-
-nav a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: #fd99c8;
-
-    
-text-shadow: 2px 2px 5px rgb(77, 28, 28); 
-  margin-right: 20px;
-  font-weight: bold;
-}
-
-.user-options {
-  font-size: 14px;
-  color: #e698bc;
-  text-shadow: 2px 2px 5px rgb(77, 28, 28); 
-}
-
-a {
-  color: #fd99c8;       
-  text-decoration: none;
-}
-
-a:hover {
-  color: #5a190d;       
-  text-decoration: underline; }

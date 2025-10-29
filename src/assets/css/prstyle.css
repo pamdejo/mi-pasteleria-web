@@ -1,119 +1,26 @@
 :root {
-  --ff-head: "Pacifico", cursive;   
-  --ff-body: "Lato", sans-serif;    
+  --ff-head: "Pacifico", cursive;
+  --ff-body: "Lato", sans-serif;
 }
 
-body {
-  font-family: var(--ff-body);
-}
-
-h1, h2, h3, .title {
-  font-family: var(--ff-head);
-}
+/* ===========================
+   BASE
+=========================== */
 
 body {
   margin: 0;
   padding: 0;
-  height: 100vh;
-
-  h3 {
-    color: rgb(255, 255, 255); 
-    -webkit-text-stroke: 0.2px rgb(167, 142, 142); 
-    text-shadow: 2px 2px 5px rgb(88, 46, 46); 
-  }
-  
-  h1 {
-    color: rgb(255, 255, 255); 
-    -webkit-text-stroke: 0.3px rgb(167, 142, 142); 
-    text-shadow: 2px 2px 5px rgb(77, 28, 28); 
-  }
-  p{
-    color: rgb(255, 255, 255); 
-    -webkit-text-stroke: 0.2px rgb(104, 84, 84); 
-    text-shadow: 2px 2px 5px rgb(92, 33, 33); 
-  }
-     
-  background-image:url(img/ChatGPT\ Image\ 12\ sept\ 2025\,\ 09_38_27\ a.m..png); 
-  background-position: center;   
-  background-attachment: fixed;  
-  font-family: Arial, sans-serif;
-}
-
-.recuadro {
-  background: #331b1b54; 
-  width: 80%;               
-  min-height: 100px;         
-  margin: 60px auto;        
-  padding-bottom: 20px;
-  display: flex;
-  flex-direction: column;   
-  gap: 20px;                
-  border-radius: 10px;
-  box-sizing: border-box;
-  border: 5px solid #471629;
-  margin-top: 80px;
-}
-
-.productos {
-  display: flex;
-  flex-wrap: wrap; 
-  gap: 20px;       
-  justify-content: center;
-}
-
-.producto {
-  background: rgba(61, 33, 33, 0.349);
-  border: 2px solid #4b1e2b;
-  border-radius: 10px;
-  width: 200px; 
-  text-align: center;
-  padding: 20px;
-  transition: transform 0.3s;
-}
-
-.producto:hover {
-  transform: scale(1.05); 
-}
-
-.producto img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  box-shadow: 0 4px 8px rgb(88, 19, 42);
-}
-
-.info-producto .nombre {
-  font-size: 16px;
-  font-weight: bold;
+  font-family: var(--ff-body);
+  background-image: url("../img/chatgpt_12sept.png");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
   color: #fff;
-  text-shadow: 2px 2px 5px rgb(77, 28, 28);
-  margin-bottom: 5px;
 }
 
-.info-producto .precio {
-  font-size: 20px;
-  font-weight: bold;
-  color: #e290a9; 
-  text-shadow: 2px 2px 5px rgb(61, 16, 26);
-  margin-bottom: 5px;
-}
-
-.info-producto .categoria {
-  font-size: 18px;
-  font-style: bold;
-  color: #db5297;
-  text-shadow: 1px 1px 3px rgb(61, 16, 26);
-  margin-bottom: 6px;
-}
-
-.info-producto .descripcion {
-  font-size: 16px;
-  font-weight: bold;
-  color: #fff;
-  text-shadow: 1px 1px 2px rgb(61, 16, 26);
-  line-height: 1.4;
-}
+/* ===========================
+   HEADER
+=========================== */
 
 header {
   background-color: #6b4444;
@@ -121,12 +28,6 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 10px 15px;
-   h2{
-    color: rgb(228, 220, 201); 
-    -webkit-text-stroke: 0.06px rgb(133, 67, 93); 
-    margin-right: 20px;
-    text-shadow: 2px 2px 5px rgb(77, 28, 28); 
-  }
 }
 
 header .logo {
@@ -139,80 +40,186 @@ header img {
   margin-right: 10px;
 }
 
+header h2 {
+  color: rgb(228, 220, 201);
+  -webkit-text-stroke: 0.06px rgb(133, 67, 93);
+  text-shadow: 2px 2px 5px rgb(77, 28, 28);
+}
+
 nav a {
   margin: 0 10px;
   text-decoration: none;
   color: #fd99c8;
-  text-shadow: 2px 2px 5px rgb(77, 28, 28); 
-  margin-right: 20px;
+  text-shadow: 2px 2px 5px rgb(77, 28, 28);
   font-weight: bold;
+}
+
+a:hover {
+  color: #5a190d;
+  text-decoration: underline;
 }
 
 .user-options {
   font-size: 14px;
   color: #e698bc;
-  text-shadow: 2px 2px 5px rgb(77, 28, 28); 
+  text-shadow: 2px 2px 5px rgb(77, 28, 28);
 }
 
-a {
-  color: #fd99c8;       
-  text-decoration: none; 
-}
+/* ===========================
+   LAYOUT PRINCIPAL
+=========================== */
 
-a:hover {
-  color: #5a190d;       
-  text-decoration: underline; 
-}
-
-.context img{
-  width: 300px;      
-  height: auto;      
-  display: block;    
-  margin-left: 120px; 
-  position: relative;
-  top: 80%;    
-  border-radius: 10px; 
-  box-shadow: 0 4px 8px rgb(88, 19, 42); 
-}
-
+/* 💡 quitamos el encierro del overlay */
 .overlay {
-  background-color: rgba(0, 0, 0, 0.4);
-  height: auto;
+  background-color: rgba(0, 0, 0, 0.35);
   width: 100%;
+  height: auto; /* <- antes estaba fijo, ahora se adapta */
   display: flex;
   justify-content: center;
-  color: white;
+  align-items: flex-start;
+  padding: 40px 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* el recuadro crece con el contenido */
+.recuadro {
+  background: rgba(51, 27, 27, 0.45);
+  width: 90%;
+  max-width: 1200px;
+  padding: 30px;
+  border: 4px solid #471629;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
   text-align: center;
 }
 
-.text-box {
-  background: rgba(83, 32, 32, 0.5);
-  color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 600px;
-  margin-left: 600px;   
-  margin-top: -210px;    
+/* ===========================
+   TITULO Y FILTRO
+=========================== */
+
+h2 {
+  font-family: var(--ff-head);
+  color: rgb(228, 220, 201);
+  -webkit-text-stroke: 0.06px rgb(133, 67, 93);
+  text-shadow: 2px 2px 5px rgb(77, 28, 28);
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
 
-h2{
-    color: rgb(228, 220, 201); 
-    -webkit-text-stroke: 0.06px rgb(133, 67, 93); 
-    margin-right: 20px;
-    text-shadow: 2px 2px 5px rgb(77, 28, 28); 
-  }
+.filtros {
+  margin-bottom: 30px;
+}
+
+.filtros label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.filtros select {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 2px solid #4b1e2b;
+  background: rgba(255, 255, 255, 0.8);
+  color: #4b1e2b;
+  font-weight: bold;
+}
+
+/* ===========================
+   PRODUCTOS
+=========================== */
+
+.productos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+}
+
+.producto {
+  background: rgba(61, 33, 33, 0.35);
+  border: 2px solid #4b1e2b;
+  border-radius: 10px;
+  width: 230px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.producto:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(255, 192, 203, 0.2);
+}
+
+.producto img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 8px rgb(88, 19, 42);
+}
+
+/* ===========================
+   INFO PRODUCTO
+=========================== */
+
+.info-producto .nombre {
+  font-size: 17px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgb(77, 28, 28);
+  margin-bottom: 5px;
+}
+
+.info-producto .precio {
+  font-size: 19px;
+  font-weight: bold;
+  color: #e290a9;
+  text-shadow: 2px 2px 5px rgb(61, 16, 26);
+  margin-bottom: 8px;
+}
+
+.info-producto .categoria {
+  font-size: 16px;
+  color: #db5297;
+  font-style: italic;
+  text-shadow: 1px 1px 3px rgb(61, 16, 26);
+  margin-bottom: 8px;
+}
+
+.info-producto .descripcion {
+  font-size: 14px;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgb(61, 16, 26);
+  line-height: 1.4;
+  min-height: 60px;
+  margin-bottom: 10px;
+}
+
+/* ===========================
+   BOTÓN
+=========================== */
 
 .add-to-cart {
-  background-color: #3f2228; 
-  color: white;              
-  border: none;              
-  padding: 10px 15px;        
-  cursor: pointer;           
-  font-weight: bold;        
-  transition: background-color 0.3s; 
+  background-color: #3f2228;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
 
-
 .add-to-cart:hover {
-  background-color: #b3105c; 
+  background-color: #b3105c;
+}
+
+/* ===========================
+   SCROLL SUAVE
+=========================== */
+
+html {
+  scroll-behavior: smooth;
 }
