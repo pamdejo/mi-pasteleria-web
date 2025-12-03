@@ -1,0 +1,110 @@
+:root {
+  --ff-head: "Pacifico", cursive;
+  --ff-body: "Lato", sans-serif;
+}
+
+body {
+  font-family: var(--ff-body);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: Arial, sans-serif;
+}
+
+h1, h2, h3, .title {
+  font-family: var(--ff-head);
+}
+
+h1 {
+  color: rgb(255, 255, 255);
+  -webkit-text-stroke: 0.3px rgb(167, 142, 142);
+  text-shadow: 2px 2px 5px rgb(77, 28, 28);
+}
+
+h3 {
+  color: rgb(255, 255, 255);
+  -webkit-text-stroke: 0.2px rgb(167, 142, 142);
+  text-shadow: 2px 2px 5px rgb(88, 46, 46);
+}
+
+p {
+  color: rgb(255, 255, 255);
+  -webkit-text-stroke: 0.2px rgb(104, 84, 84);
+  text-shadow: 2px 2px 5px rgb(92, 33, 33);
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-bottom: 65px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  min-height: 100vh; /* Ocupa todo el alto de la pantalla */
+}
+
+.recuadro {
+  position: static;
+  background: rgba(48, 24, 24, 0.5);
+  padding: 10px;
+  border-radius: 10px;
+  width: 200mm;
+  height: 80%;
+  max-width: 500px;
+  text-align: center;
+  box-sizing: border-box;
+  margin-top: 20mm;
+}
+
+.form-registro {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.form-registro label {
+  text-align: left;
+  font-size: 14px;
+  color: #ffdede;
+  text-shadow: 1px 1px 3px rgb(77, 28, 28);
+}
+
+.form-registro input {
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+}
+
+.form-registro button {
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #a34d4d;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  text-shadow: 1px 1px 3px rgb(46, 17, 17);
+  transition: background 0.3s ease;
+}
+
+.form-registro button:hover {
+  background: #5a190d;
+}
+
+.presentacion h1 {
+  margin-bottom: 12px;
+}
+
+.presentacion p {
+  color: #fff;
+  margin: 0;
+}

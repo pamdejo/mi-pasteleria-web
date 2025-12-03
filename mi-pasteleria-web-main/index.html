@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pastelería Mil Sabores</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth; 
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="img/logo2.png" alt="Logo">
+      <h2>Pastelería Mil Sabores</h2>
+    </div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="productos.html">Productos</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="blog.html">Blog</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <div class="user-options">
+      <a href="iniciosesi.html"> iniciar sesión  </a>
+      |
+      <a href="registro.html"> Registrarse </a> 
+      |
+      <a href="carrito.html"> Carro (<span id="cart-count">0</span>)</a>
+    </div>
+  </header>
+
+  <div class="overlay">
+    <div class="presentacion">
+      <h1>Pastelería Mil Sabores</h1>
+      <p>Estamos emocionados de compartir nuestras delicias contigo</p>
+      <h3>Descubre, saborea y crea momentos inolvidables con nosotros</h3>
+    </div>
+  </div>
+
+  <div class="context">
+    <img src="img/eee.webp" alt="Imagen principal">
+  </div>
+
+  
+  <div class="text-box" id="nosotros">
+    <p>Pastelería 1000 Sabores celebra su 50 aniversario como un referente en la repostería chilena.
+      Famosa por su participación en un récord Guinness en 1995, cuando colaboró en la creación de la
+      torta más grande del mundo, la pastelería busca renovar su sistema de ventas online para ofrecer
+      una experiencia de compra moderna y accesible para sus clientes.</p>
+  </div>
+
+  <div class="text-box2">
+    <h2>Nuestra misión</h2>
+    <p>Ofrecer una experiencia dulce y memorable a nuestros clientes, proporcionando tortas y productos
+    de repostería de alta calidad para todas las ocasiones, mientras celebramos nuestras raíces
+    históricas y fomentamos la creatividad en la repostería.</p>
+  </div>
+
+  <div class="imagen2">
+    <img src="img/pasteleria1000sabores.png" alt="Imagen principal">
+
+  </div>
+
+  <div class="text-box3">
+    <h2>Nuestra visión</h2>
+    <p>Convertirnos en la tienda online líder de productos de repostería en Chile, conocida por nuestra
+  innovación, calidad y el impacto positivo en la comunidad, especialmente en la formación de nuevos
+  talentos en gastronomía.</p>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const cartCount = document.getElementById("cart-count");
+      const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+      cartCount.innerText = carrito.length;
+    });
+  </script>
+</body>
+</html>

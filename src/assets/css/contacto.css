@@ -1,0 +1,124 @@
+:root {
+  --ff-head: "Pacifico", cursive;
+  --ff-body: "Lato", sans-serif;
+}
+
+/* --- GENERAL --- */
+body {
+  font-family: var(--ff-body);
+  margin: 0;
+  padding: 0;
+  background-image: url("../img/chatgpt_12sept.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+}
+
+/* --- TÍTULOS --- */
+h1, h2, h3 {
+  font-family: var(--ff-head);
+}
+
+h1 {
+  color: white;
+  -webkit-text-stroke: 0.3px rgb(167, 142, 142);
+  text-shadow: 2px 2px 5px rgb(77, 28, 28);
+}
+
+/* --- CONTENEDOR PRINCIPAL --- */
+.overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  min-height: 100vh; /* Permite scroll */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px 20px;
+}
+
+/* --- CAJA DE CONTACTO --- */
+.contact-box {
+  background: rgba(59, 30, 30, 0.6);
+  width: 90%;
+  max-width: 600px;
+  border-radius: 10px;
+  padding: 40px;
+  border: 4px solid #5c1c2c;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  text-align: left;
+}
+
+.contact-box h2 {
+  text-align: center;
+  color: #ffe5e5;
+  text-shadow: 2px 2px 5px rgb(92, 33, 33);
+  margin-bottom: 25px;
+}
+
+/* --- FORMULARIO --- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-weight: bold;
+  color: #f3d7d7;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 2px solid #3f2323;
+  border-radius: 6px;
+  padding: 10px;
+  background-color: #fff5e1;
+  color: #5d4037;
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  outline: none;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #a1425a;
+  box-shadow: 0 0 6px rgba(193, 72, 108, 0.6);
+}
+
+textarea {
+  resize: none;
+  min-height: 120px;
+}
+
+/* --- BOTÓN --- */
+button {
+  background-color: #4d0b2a;
+  color: #fff5e1;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #c72c60;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .contact-box {
+    padding: 25px;
+  }
+}
+.error {
+  color: #ffb3b3;
+  font-size: 14px;
+  margin-top: -8px;
+  margin-bottom: 10px;
+  display: block;
+}

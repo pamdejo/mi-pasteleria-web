@@ -1,0 +1,136 @@
+/* ==============================
+   FUENTES Y VARIABLES GLOBALES
+   ============================== */
+:root {
+  --ff-head: "Pacifico", cursive;
+  --ff-body: "Lato", sans-serif;
+  --color-fondo: rgba(83, 32, 32, 0.5);
+  --color-principal: #6b4444;
+  --color-texto: rgb(228, 220, 201);
+  --color-rosa: #fd99c8;
+}
+
+/* ==============================
+   RESETEO GENERAL
+   ============================== */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: var(--ff-body);
+  background-image: url("../img/chatgpt_12sept.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+}
+
+h1, h2, h3 {
+  font-family: var(--ff-head);
+}
+
+/* ==============================
+   HEADER UNIFICADO
+   ============================== */
+header {
+  background-color: var(--color-principal);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+}
+
+header img {
+  width: 130px;
+  margin-right: 10px;
+}
+
+header h2 {
+  color: var(--color-texto);
+  -webkit-text-stroke: 0.06px rgb(133, 67, 93);
+  text-shadow: 2px 2px 5px rgb(77, 28, 28);
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: var(--color-rosa);
+  text-shadow: 2px 2px 5px rgb(77, 28, 28);
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #5a190d;
+  text-decoration: underline;
+}
+
+.user-options {
+  font-size: 14px;
+  color: #e698bc;
+  text-shadow: 2px 2px 5px rgb(77, 28, 28);
+}
+
+/* ==============================
+   SECCIONES DEL HOME
+   ============================== */
+.presentacion {
+  background: var(--color-fondo);
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.context img {
+  width: 300px;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgb(88, 19, 42);
+}
+
+.text-box,
+.text-box2,
+.text-box3 {
+  background: var(--color-fondo);
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 40px auto;
+}
+
+.text-box2 h2,
+.text-box3 h2 {
+  color: var(--color-texto);
+  -webkit-text-stroke: 0.06px rgb(70, 29, 36);
+  text-shadow: 2px 2px 5px rgb(77, 28, 28);
+}
+
+.imagen2 img {
+  width: 300px;
+  display: block;
+  margin: 40px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgb(88, 19, 42);
+}
+
+/* ==============================
+   EFECTOS VISUALES
+   ============================== */
+.overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}

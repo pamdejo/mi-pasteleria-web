@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro - Pasteleria Mil Sabores</title>
+  <link rel="stylesheet" href="regstyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Pacifico&display=swap" rel="stylesheet">
+
+</head>
+
+<script src="js/registro.js"></script>
+<body>
+<header>
+    <div class="logo">
+      <img src="img/logo2.png" alt="Logo">
+      <h2>Pastelería Mil Sabores</h2>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="productos.html">Productos</a>
+      <a href="blog.html">Blog</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <div class="user-options">
+      <a href="iniciosesi.html"> iniciar sesión  </a>
+      |
+      <a href="registro.html"> Registrarse </a> 
+    </div>
+  </header>
+    <div class="overlay">
+<div class="recuadro">
+  <div class="presentacion">
+    <h1>Registro</h1>
+    <p>Crea tu cuenta para continuar</p>
+  </div>
+
+  <form class="form-registro" autocomplete="off">
+    <label for="nombre">Nombre completo</label>
+    <input type="text" id="nombre" name="nombre" autocomplete="off" required>
+
+    <label for="edad">Edad</label>
+    <input type="number" id="edad" name="edad" autocomplete="off" min="1" max="120" required>
+
+    <label for="correo">Correo electrónico</label>
+    <input type="email" id="correo" name="correo" autocomplete="off" required>
+
+   <label for="password">Contraseña</label>
+    <input type="password" id="password" name="password" autocomplete="new-password" required>
+
+    <label for="confirmar">Confirmar contraseña</label>
+    <input type="password" id="confirmar" name="confirmar" autocomplete="new-password" required>
+
+    <label for="descuento">Código de descuento</label>
+    <input type="text" id="descuento" name="descuento" autocomplete="off" placeholder="(opcional)">
+
+    <button type="submit">Registrarse</button>
+</form>
+</div>
+
+
+</body>
+</html>

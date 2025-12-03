@@ -1,0 +1,205 @@
+:root {
+  --ff-head: "Pacifico", cursive;   
+  --ff-body: "Lato", sans-serif;    
+}
+
+
+
+body {
+  font-family: var(--ff-body);
+}
+
+h1, h2, h3, .title {
+  font-family: var(--ff-head);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+
+  h3 {
+    color: rgb(255, 255, 255); 
+    -webkit-text-stroke: 0.2px rgb(167, 142, 142); 
+    text-shadow: 2px 2px 5px rgb(88, 46, 46); 
+    }
+  
+  h1 {
+    color: rgb(255, 255, 255); 
+    -webkit-text-stroke: 0.3px rgb(167, 142, 142); 
+    text-shadow: 2px 2px 5px rgb(77, 28, 28); 
+    }
+  p{color: rgb(255, 255, 255); 
+    -webkit-text-stroke: 0.2px rgb(104, 84, 84); 
+    text-shadow: 2px 2px 5px rgb(92, 33, 33); 
+    
+  }
+     
+    
+
+
+  background-image:url(img/ChatGPT\ Image\ 12\ sept\ 2025\,\ 09_38_27\ a.m..png) ; 
+  
+  background-position: center;   
+  background-attachment: fixed; 
+  font-family: Arial, sans-serif;
+}
+
+
+
+.presentacion {
+  background: rgba(59, 30, 30, 0.5); 
+  width: 100%; 
+  padding: 20px;
+  display: inline-block; 
+  text-align: center;
+   margin-bottom: 20px; 
+   margin-top: 5px;
+}
+
+.presentacion h1{
+  margin-bottom: 12px; 
+}
+.presentacion p {
+  color: #fff; 
+  margin: 0;
+}
+
+/**/
+
+header {
+  background-color: #6b4444;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+   h2{
+    color: rgb(228, 220, 201); 
+    -webkit-text-stroke: 0.06px rgb(133, 67, 93); 
+    margin-right: 20px;
+      text-shadow: 2px 2px 5px rgb(77, 28, 28); 
+
+  }
+
+
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+}
+
+header img {
+  width: 130px;
+  margin-right: 10px;
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #fd99c8;
+
+    
+text-shadow: 2px 2px 5px rgb(77, 28, 28); 
+  margin-right: 20px;
+  font-weight: bold;
+}
+
+.user-options {
+  font-size: 14px;
+  color: #e698bc;
+  text-shadow: 2px 2px 5px rgb(77, 28, 28); 
+}
+
+a {
+  color: #fd99c8;       
+  text-decoration: none; 
+}
+
+a:hover {
+  color: #5a190d;      
+  text-decoration: underline; 
+}
+
+.context img{
+  width: 300px;     
+  height: auto;   
+  display: block;    
+  margin-left: 120px; 
+  position: relative;
+  top: 80%;   
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgb(88, 19, 42); 
+   
+ 
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+/* */
+
+.text-box {
+  background: rgba(83, 32, 32, 0.5);
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin-left: 600px;   
+  margin-top: -210px; 
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.text-box2 {
+  h2{
+    color: rgb(228, 220, 201); 
+    -webkit-text-stroke: 0.06px rgb(70, 29, 36); 
+    margin-right: 20px;
+      text-shadow: 2px 2px 5px rgb(77, 28, 28);
+
+  }
+  background: rgba(83, 32, 32, 0.5);
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin-left: 50px;   
+  margin-top: 70px;
+}
+
+.imagen2 img {
+  width: 300px;      
+  height: auto;      
+  display: block;    
+  margin-left: 800px; 
+  position: relative;
+  top: -220px;    
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgb(88, 19, 42);
+
+}
+
+.text-box3 {
+  h2{
+    color: rgb(228, 220, 201); 
+    -webkit-text-stroke: 0.06px rgb(70, 29, 36); 
+    margin-right: 20px;
+      text-shadow: 2px 2px 5px rgb(77, 28, 28);
+  }
+  background: rgba(83, 32, 32, 0.5);
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin-left: 50px;   
+  margin-top: -270px;    }
