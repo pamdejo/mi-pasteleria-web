@@ -11,7 +11,7 @@ export default function Productos() {
   const [cargando, setCargando] = useState(true);
   const [error, setError] = useState(null);
 
-  // 🔹 Cargar productos desde el backend
+  // 🔹 Cargar productos desde el backend y carrito desde localStorage
   useEffect(() => {
     const cargarDatos = async () => {
       try {
@@ -40,7 +40,7 @@ export default function Productos() {
     cargarDatos();
   }, []);
 
-  // 🔹 Guardar carrito en localStorage
+  // 🔹 (extra) sincronizar carrito -> localStorage si cambia
   useEffect(() => {
     localStorage.setItem("carrito", JSON.stringify(carrito));
   }, [carrito]);
@@ -66,6 +66,8 @@ export default function Productos() {
     }
 
     setCarrito(nuevoCarrito);
+    // 👇 aseguramos que el carrito se guarda al instante
+    localStorage.setItem("carrito", JSON.stringify(nuevoCarrito));
   };
 
   // 🔹 Contar productos en el carrito
@@ -77,7 +79,6 @@ export default function Productos() {
       <div className="recuadro">
         <h2>Menú de Productos</h2>
 
-        {/* Estados de carga / error */}
         {cargando && <p style={{ color: "#e290a9" }}>Cargando productos...</p>}
         {error && (
           <p style={{ color: "red" }}>
@@ -85,7 +86,6 @@ export default function Productos() {
           </p>
         )}
 
-        {/* Solo mostramos filtros y productos si no hay error */}
         {!cargando && !error && (
           <>
             <div className="filtros">
@@ -116,13 +116,11 @@ export default function Productos() {
                 productosFiltrados.map((p) => (
                   <div className="producto" key={p.id ?? p.nombre}>
                     <div className="producto-img">
-                      {/* Imagen (si existe) */}
                       {p.imagen && (
                         <img
                           src={p.imagen}
                           alt={p.nombre}
                           onError={(e) => {
-                            // si la ruta de la imagen falla, opcionalmente puedes poner una por defecto
                             // e.target.src = "/img/default.jpg";
                           }}
                         />

@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "../assets/css/adminstyle.css";
 
-const API_URL = "http://localhost:8080/api/productos"; // cambia a 8081 si tu backend usa ese puerto
+const API_PRODUCTOS = "http://localhost:8080/api/productos";
+const API_USUARIOS = "http://localhost:8080/api/usuarios";
+const API_PEDIDOS = "http://localhost:8080/api/pedidos";
+const API_BLOG = "http://localhost:8080/api/blog";
 
 export default function Admin() {
   const [seccionActiva, setSeccionActiva] = useState("productos");
@@ -9,11 +12,15 @@ export default function Admin() {
   // Estados principales
   const [productos, setProductos] = useState([]);
   const [publicaciones, setPublicaciones] = useState([]);
-  const [pedidos, setPedidos] = useState([]);
+  const [comentarios, setComentarios] = useState([]);
+
   const [usuarios, setUsuarios] = useState([]);
   const [cargandoUsuarios, setCargandoUsuarios] = useState(true);
   const [errorUsuarios, setErrorUsuarios] = useState(null);
-  const [comentarios, setComentarios] = useState([]);
+
+  const [pedidos, setPedidos] = useState([]);
+  const [cargandoPedidos, setCargandoPedidos] = useState(true);
+  const [errorPedidos, setErrorPedidos] = useState(null);
 
   const [cargandoProductos, setCargandoProductos] = useState(true);
   const [errorProductos, setErrorProductos] = useState(null);
@@ -27,17 +34,18 @@ export default function Admin() {
     }
   }, []);
 
-  // 🔹 Cargar productos (backend) + resto (localStorage) + usuarios (backend)
+  // =========================
+  //  CARGAS INICIALES
+  // =========================
+
   useEffect(() => {
     const cargarProductos = async () => {
       try {
         setCargandoProductos(true);
         setErrorProductos(null);
 
-        const resp = await fetch(API_URL);
-        if (!resp.ok) {
-          throw new Error("Error al obtener productos");
-        }
+        const resp = await fetch(API_PRODUCTOS);
+        if (!resp.ok) throw new Error("Error al obtener productos");
         const data = await resp.json();
         setProductos(data);
       } catch (err) {
@@ -53,10 +61,8 @@ export default function Admin() {
         setCargandoUsuarios(true);
         setErrorUsuarios(null);
 
-        const resp = await fetch("http://localhost:8080/api/usuarios");
-        if (!resp.ok) {
-          throw new Error("Error al obtener usuarios");
-        }
+        const resp = await fetch(API_USUARIOS);
+        if (!resp.ok) throw new Error("Error al obtener usuarios");
         const data = await resp.json();
         setUsuarios(data);
       } catch (err) {
@@ -67,24 +73,45 @@ export default function Admin() {
       }
     };
 
+    const cargarPedidos = async () => {
+      try {
+        setCargandoPedidos(true);
+        setErrorPedidos(null);
+
+        const resp = await fetch(API_PEDIDOS);
+        if (!resp.ok) throw new Error("Error al obtener pedidos");
+        const data = await resp.json();
+        setPedidos(data);
+      } catch (err) {
+        console.error(err);
+        setErrorPedidos("No se pudieron cargar los pedidos");
+      } finally {
+        setCargandoPedidos(false);
+      }
+    };
+
+    const cargarBlog = async () => {
+      try {
+        const resp = await fetch(API_BLOG);
+        if (!resp.ok) throw new Error("Error al obtener publicaciones del blog");
+        const data = await resp.json();
+        setPublicaciones(data);
+      } catch (err) {
+        console.error(err);
+        setPublicaciones([]); // si falla, lista vacía
+      }
+    };
+
     cargarProductos();
     cargarUsuarios();
+    cargarPedidos();
+    cargarBlog();
 
-    // Resto de secciones desde localStorage (como en el zip original)
-    setPublicaciones(JSON.parse(localStorage.getItem("blog")) || []);
-    setPedidos(JSON.parse(localStorage.getItem("pedidos")) || []);
+    // Comentarios siguen en localStorage
     setComentarios(JSON.parse(localStorage.getItem("comentarios")) || []);
   }, []);
 
-  // 🔹 Persistir secciones en localStorage (igual que antes, menos productos/usuarios)
-  useEffect(() => {
-    localStorage.setItem("blog", JSON.stringify(publicaciones));
-  }, [publicaciones]);
-
-  useEffect(() => {
-    localStorage.setItem("pedidos", JSON.stringify(pedidos));
-  }, [pedidos]);
-
+  // 🔹 Persistir SOLO comentarios en localStorage
   useEffect(() => {
     localStorage.setItem("comentarios", JSON.stringify(comentarios));
   }, [comentarios]);
@@ -96,7 +123,7 @@ export default function Admin() {
   const recargarProductos = async () => {
     try {
       setCargandoProductos(true);
-      const resp = await fetch(API_URL);
+      const resp = await fetch(API_PRODUCTOS);
       if (!resp.ok) throw new Error("Error al obtener productos");
       const data = await resp.json();
       setProductos(data);
@@ -128,7 +155,7 @@ export default function Admin() {
     };
 
     try {
-      const resp = await fetch(API_URL, {
+      const resp = await fetch(API_PRODUCTOS, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(nuevo),
@@ -152,7 +179,7 @@ export default function Admin() {
     if (!window.confirm("¿Eliminar este producto?")) return;
 
     try {
-      const resp = await fetch(`${API_URL}/${id}`, {
+      const resp = await fetch(`${API_PRODUCTOS}/${id}`, {
         method: "DELETE",
       });
 
@@ -170,10 +197,10 @@ export default function Admin() {
   };
 
   // =========================
-  //  BLOG (LOCALSTORAGE)
+  //  BLOG (BACKEND)
   // =========================
 
-  const agregarPublicacion = (e) => {
+  const agregarPublicacion = async (e) => {
     e.preventDefault();
     const titulo = e.target.tituloBlog.value.trim();
     const contenido = e.target.contenidoBlog.value.trim();
@@ -192,25 +219,74 @@ export default function Admin() {
       fecha: new Date().toLocaleDateString("es-CL"),
     };
 
-    setPublicaciones([...publicaciones, nueva]);
-    e.target.reset();
+    try {
+      const resp = await fetch(API_BLOG, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(nueva),
+      });
+
+      if (!resp.ok) {
+        const msg = await resp.text();
+        throw new Error(msg || "Error al crear publicación");
+      }
+
+      const creada = await resp.json();
+      setPublicaciones([...publicaciones, creada]);
+      e.target.reset();
+      alert("Publicación creada correctamente");
+    } catch (err) {
+      console.error(err);
+      alert("No se pudo crear la publicación");
+    }
   };
 
-  const eliminarPublicacion = (i) => {
-    const nuevas = [...publicaciones];
-    nuevas.splice(i, 1);
-    setPublicaciones(nuevas);
+  const eliminarPublicacion = async (id) => {
+    if (!window.confirm("¿Eliminar publicación?")) return;
+
+    try {
+      const resp = await fetch(`${API_BLOG}/${id}`, {
+        method: "DELETE",
+      });
+
+      if (!resp.ok && resp.status !== 204) {
+        const msg = await resp.text();
+        throw new Error(msg || "Error al eliminar publicación");
+      }
+
+      setPublicaciones(publicaciones.filter((p) => p.id !== id));
+      alert("Publicación eliminada");
+    } catch (err) {
+      console.error(err);
+      alert("No se pudo eliminar la publicación");
+    }
   };
 
   // =========================
-  //  PEDIDOS (LOCALSTORAGE)
+  //  PEDIDOS (BACKEND)
   // =========================
 
-  const eliminarPedido = (i) => {
-    if (window.confirm("¿Eliminar este pedido?")) {
-      const nuevos = [...pedidos];
-      nuevos.splice(i, 1);
-      setPedidos(nuevos);
+  const eliminarPedido = async (id) => {
+    if (!window.confirm("¿Eliminar este pedido?")) return;
+
+    try {
+      const resp = await fetch(`${API_PEDIDOS}/${id}`, {
+        method: "DELETE",
+      });
+
+      if (!resp.ok && resp.status !== 204) {
+        const msg = await resp.text();
+        throw new Error(msg || "Error al eliminar pedido");
+      }
+
+      const respLista = await fetch(API_PEDIDOS);
+      const data = await respLista.json();
+      setPedidos(data);
+
+      alert("Pedido eliminado");
+    } catch (err) {
+      console.error(err);
+      alert("No se pudo eliminar el pedido");
     }
   };
 
@@ -337,13 +413,13 @@ export default function Admin() {
               {publicaciones.length === 0 ? (
                 <p>No hay publicaciones aún.</p>
               ) : (
-                publicaciones.map((p, i) => (
-                  <div className="card" key={i}>
+                publicaciones.map((p) => (
+                  <div className="card" key={p.id}>
                     {p.imagen && <img src={p.imagen} alt={p.titulo} />}
                     <h3>{p.titulo}</h3>
                     <small>{p.fecha}</small>
                     <p>{p.contenido}</p>
-                    <button onClick={() => eliminarPublicacion(i)}>
+                    <button onClick={() => eliminarPublicacion(p.id)}>
                       Eliminar
                     </button>
                   </div>
@@ -357,28 +433,52 @@ export default function Admin() {
         {seccionActiva === "pedidos" && (
           <section className="panel">
             <h2>Pedidos</h2>
+
+            {cargandoPedidos && <p>Cargando pedidos...</p>}
+            {errorPedidos && (
+              <p style={{ color: "red" }}>{errorPedidos}</p>
+            )}
+
             <div id="listaPedidos">
-              {pedidos.length === 0 ? (
+              {!cargandoPedidos && !errorPedidos && pedidos.length === 0 && (
                 <p>No hay pedidos registrados.</p>
-              ) : (
-                pedidos.map((p, i) => (
-                  <div className="card" key={i}>
+              )}
+
+              {!cargandoPedidos &&
+                !errorPedidos &&
+                pedidos.length > 0 &&
+                pedidos.map((p) => (
+                  <div className="card" key={p.id}>
                     <p>
-                      <strong>Cliente:</strong> {p.usuario || "Desconocido"}
+                      <strong>Cliente:</strong>{" "}
+                      {p.nombreCliente || "Desconocido"}
+                    </p>
+                    <p>
+                      <strong>Correo:</strong> {p.correoCliente || "-"}
                     </p>
                     <p>
                       <strong>Total:</strong> $
-                      {Number(p.total).toLocaleString("es-CL")}
+                      {Number(p.total || 0).toLocaleString("es-CL")}
+                    </p>
+                    <p>
+                      <strong>Descuento aplicado:</strong>{" "}
+                      {p.descuentoAplicado ?? 0}%
+                    </p>
+                    <p>
+                      <strong>Estado:</strong> {p.estado}
+                    </p>
+                    <p>
+                      <strong>Fecha:</strong>{" "}
+                      {p.fecha ? p.fecha.replace("T", " ") : "-"}
                     </p>
                     <button
                       className="eliminar-pedido"
-                      onClick={() => eliminarPedido(i)}
+                      onClick={() => eliminarPedido(p.id)}
                     >
                       Eliminar pedido
                     </button>
                   </div>
-                ))
-              )}
+                ))}
             </div>
           </section>
         )}
